@@ -1,0 +1,78 @@
+struct_overlay:
+  in:
+    default:
+      name: Bill
+      age: 25.0
+      account: 2058
+      sub_struct: {published_paper: false, has_data: false}
+    in:
+      name: Timmy
+      age: 18.0
+      sub_struct: {published_paper: true}
+    in_new:
+      name: Timmy
+      age: 18.0
+      sub_struct: {published_paper: true}
+      new_field: 42.0
+  out:
+    opts:
+      name: Timmy
+      age: 18.0
+      account: 2058
+      sub_struct: {published_paper: true, has_data: false}
+    opts_nonrecursive:
+      name: Timmy
+      age: 18.0
+      account: 2058
+      sub_struct: {published_paper: true}
+    opts_new:
+      name: Timmy
+      age: 18.0
+      account: 2058.0
+      sub_struct: {published_paper: true, has_data: false}
+      new_field: 42.0
+struct_permute:
+  in:
+    opt_values:
+      mass: [5.0, 10.0, 15.0]
+      pos: [1.0, 2.0]
+      extra:
+        x: [2.0, 3.0]
+  out:
+    opt_set:
+      - mass: 5.0
+        pos: 1.0
+        extra: {x: 2.0}
+      - mass: 5.0
+        pos: 1.0
+        extra: {x: 3.0}
+      - mass: 5.0
+        pos: 2.0
+        extra: {x: 2.0}
+      - mass: 5.0
+        pos: 2.0
+        extra: {x: 3.0}
+      - mass: 10.0
+        pos: 1.0
+        extra: {x: 2.0}
+      - mass: 10.0
+        pos: 1.0
+        extra: {x: 3.0}
+      - mass: 10.0
+        pos: 2.0
+        extra: {x: 2.0}
+      - mass: 10.0
+        pos: 2.0
+        extra: {x: 3.0}
+      - mass: 15.0
+        pos: 1.0
+        extra: {x: 2.0}
+      - mass: 15.0
+        pos: 1.0
+        extra: {x: 3.0}
+      - mass: 15.0
+        pos: 2.0
+        extra: {x: 2.0}
+      - mass: 15.0
+        pos: 2.0
+        extra: {x: 3.0}
